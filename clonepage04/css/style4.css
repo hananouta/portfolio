@@ -1,0 +1,210 @@
+@charset "utf-8";
+
+*{padding: 0;margin: 0; line-height: 1.5;font-family: 'Raleway', sans-serif;}
+h1,h2,h3,h4,h5,h6{font-weight: 400;margin: 10px 0;}
+body{height: 100vh;}
+#header {
+    position: relative;
+    height: 100%;
+    background-image: url(../img/wedding_couple.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(.5);
+}
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    letter-spacing: 4px;
+    
+}
+.header-title h1 {font-size: 64px;}
+.header-title h2 {font-size: 30px;}
+
+#header::after {content: '';display: block;clear: both;}
+
+/* 고정 바 */
+#nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    opacity: .75;
+    text-align: center;
+    z-index: 999;
+}
+.bar {padding: 8px 16px;overflow: hidden;}
+.bar a {
+    text-decoration: none;
+    color: black;
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    font-size: 15px;
+}
+#nav:hover {
+    opacity: 1;
+}
+.bar a:hover {background: rgb(206, 206, 206);}
+.bar a:hover:last-child {background: black;color: white;}
+
+/* content */
+
+.content-box {
+    background: #ffdddd;
+    color: black;
+    padding: 64px 16px;
+    filter: grayscale(.5);
+}
+
+.content {
+    max-width: 980px;
+    margin: auto;
+}
+.content h1 {
+    text-align: center;
+    color: #757575;
+    font-size: 36px;
+}
+.content img {
+    margin: 32px 0;
+    width: 100%;
+    border-radius: 4px;
+    filter: grayscale(.5);
+}
+.content p {
+    font-size: 16px;
+    line-height: 2;
+    margin: 15px 0;
+    font-weight: 400;
+}
+
+.button {
+    border:none;
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 2;
+}
+
+.bt-details {text-align: center;}
+.bt-details a {
+    background: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 18px;
+    display: inline-block;
+}
+.bt-details a:hover {
+    background: #ddd;
+    color: black;
+}
+
+/* invited */
+.invited {
+    background: url(../img/flowers.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+}
+.invited-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: white;
+}
+.invited-title h1 {font-size: 64px;}
+.invited-title h2 {font-size: 30px;}
+
+/* wedding */
+#wedding-box {
+    background: #ffdddd;
+    color: black;
+    padding: 64px 16px;
+    filter: grayscale(.5);
+}
+
+.wedding {
+    max-width: 980px;
+    margin: auto;
+}
+.wedding-title img {
+    width: 100%;
+    margin: 64px 0;
+    border-radius: 4px;
+    
+    filter: grayscale(.5);
+}
+.wedding-title h1 {
+    text-align: center;
+    color: #757575;
+    font-size: 36px;
+}
+.wedding-info {
+    overflow: hidden;
+}
+.when, .where {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.when h2, .where h2{font-size: 30px;}
+.when p, .where p{font-size: 15px;margin: 15px 0;line-height: 2;}
+
+/* rsvp */
+#rsvp {
+    background: #ffdddd;
+    padding: 64px 0;
+    text-align: center;
+    letter-spacing: 4px;
+}
+#rsvp h1 {font-size: 36px;}
+#rsvp p {
+    font-size: 18px;
+    margin: 18px 0;
+    line-height: 2;
+}
+#rsvp .bt-rsvp {
+    margin: 24px 0;
+}
+.bt-rsvp button {
+    background: #f44336;
+    color: white;
+    padding: 8px 60px;
+    font-size: 24px;
+    border-radius: 4px;
+    line-height: 2;
+    opacity: .6;
+}
+.bt-rsvp button:hover {
+    background: rgb(212, 212, 212);
+    color: black;
+    opacity: 1;
+}
+
+/* footer */
+#footer {
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 16px 0;
+    text-align: center;
+}
+#footer p{
+    margin: 15px 0;
+    font-size: 15px;
+    line-height: 2;
+}
+#footer p a{color: white;}
+#footer p a:hover {color: olivedrab;}
