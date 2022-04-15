@@ -1,0 +1,22 @@
+@mixin txtLayout() {
+    div {
+        margin-bottom:50px;
+        h2 {
+            margin-top: 15px;
+            line-height: 24px;
+            .category {
+                margin-bottom: 6px;
+            }
+            .detail {
+                font-weight: bold;
+                font-size: 17px;
+            }
+        }
+    }
+    margin-bottom: -50px;
+}
+@mixin imgflex() {   
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+}

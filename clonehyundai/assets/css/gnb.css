@@ -1,0 +1,269 @@
+@charset "utf-8";
+*{
+    font-family: '현대하모니','FontAwesome' !important;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}
+/* nav bar */
+.gnb-wrap-full {
+    width: 100%;
+    min-height: 0;
+    position: absolute;
+    background: #f6f3f2;
+    z-index: 9999;
+}
+.gnb-wrap.open{
+    min-height: 137px;
+    border-bottom:2px solid #e4dcd3;
+    z-index: 9999;
+}
+.gnb-wrap {
+    height: 71px;
+    position: relative;
+    background: #f6f3f2;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.gnb-inner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    width: 1120px;
+    margin: 0 auto;
+}
+.logo img {
+    width: 155px;
+    height: 20px;
+}
+/* nav - 메뉴 버튼 */
+.nav-center {
+    width: 560px;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.menu-item a{
+    color: #666;
+    font-size: 15px;
+}
+.menu-item:nth-child(4):after,
+.sub-item:nth-child(5):after,
+.sub-item:nth-child(6):after {
+    background:url(../img/ico_gnb_newwin2.png);
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    content: '';
+    margin: 0 0 0 5px;
+}
+/* 회사 소개 2depth */
+.submenu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 71px;
+    left: 0;
+    z-index: 1000;
+    transition: all .3s;
+}
+.submenu.border {
+    border-top:2px solid #e4dcd3;
+}
+.submenu ul {
+    width: 1120px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+.submenu ul li {
+    padding: 24px 0;
+    font-size: 16px;
+    color: #666;
+    margin-right: 75px;
+    position: relative;
+}
+.sub-close {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: 543px;
+    background-size: cover;
+    text-indent: -100000px;
+    width: 16px;
+    height: 16px;
+    background: url(../img/btn_search_close.webp);
+    background-size: cover;
+    transition: .4s;
+}
+.sub-close:hover{
+    transform: rotate(180deg);
+}
+.icon-item, .menu-item {
+    padding-top: 3px;
+}
+
+/* nav - 오른쪽 블럭 */
+.nav-right {
+    width: 19%;
+}
+.icon {
+    display: flex;
+    justify-content: space-between;
+}
+.icon-item img {
+    width: 17px;
+    height: 17px;
+}
+/* 검색창 */
+.search {
+    background: url(../img/btn_topmenu_search.png);
+    background-size: cover;
+    text-indent: -100000px;
+    width: 17px;
+    height: 17px;
+}
+/* 참조 https://wsss.tistory.com/1043 */
+.search-area {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background: #f2f2f2;
+    transition: all .3s;
+    position: relative;
+    top: 24px;
+}
+.search-area.search-open {
+    height: 231px;
+}
+.search-inner {
+    width: 1120px;
+    margin: 0 auto;
+    padding: 20px 0;
+    position: relative;
+}
+.search-box {
+    position: relative;
+    width: 572px;
+    margin: 0 auto;
+    background: white;
+}
+.search-input {
+    padding-right: 55px;
+}
+.search-txt {
+    width: 100%;
+    height: 50px;
+    padding: 0 0 0 20px;
+    border: 0;
+    font-size: 20px;
+    line-height: 50px;
+    box-sizing: border-box;
+}
+.search-btn {
+    background: url(../img/btn_search.webp) no-repeat center center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 50px;
+    text-indent: -100000px;
+}
+.search-topic {
+    width: 572px;
+    margin: 0 auto;
+    margin-top: 29px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.search-close {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    background-size: cover;
+    text-indent: -100000px;
+    width: 17px;
+    height: 17px;
+    background: url(../img/btn_search_close.webp);
+    background-size: cover;
+    transition: .4s;
+}
+.search-close:hover {
+    transform: rotate(180deg);
+}
+.topic-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+    letter-spacing: -.02em;
+    margin-bottom: 10px;
+    display: block;
+}
+.topic-list .link {
+    margin-right: 25px;
+    font-size: 17px;
+    color: #666;
+    display: inline-block;
+}
+.dimmed {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    z-index: 20;
+}
+.dimmed.bgOn {
+    display: block;
+}
+/* 언어 변경 */
+.language-btn {
+    color: #666;
+    font-size: 17px;
+    font-weight: bold;
+    width: 105px;
+}
+.language-btn:hover {
+    color: #002c5f;
+}
+.language-btn i {
+    font-size: 12px;
+}
+.lan-list {
+    transition: .5s;
+    background: #f7f3f2;
+    padding: 25px 0 16px;
+    display: none;
+}
+.d_block {
+    display:block;
+}
+.lan-list li {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: 16px;
+}
+.lan-list li a:hover, 
+.lan-list li.active {
+    font-weight: bold;
+}
+.lan-list li:first-child {
+    margin-top: 11px;
+}
