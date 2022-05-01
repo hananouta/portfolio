@@ -1,0 +1,14 @@
+.sa {
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+.sa-left {
+    transform: translate(-300px, 0)
+}
+.sa-right {
+    transform: translate(500px, 0);
+}
+.sa.show {
+    opacity: 1;
+    transform: none;
+}

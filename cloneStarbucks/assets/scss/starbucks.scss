@@ -1,0 +1,851 @@
+@import 'variable.scss';
+@import 'mixin.scss';
+@import 'scrollEvent.scss';
+@font-face {
+    font-family: 'nbg';
+    src:url('../fonts/NanumBarunGothic.ttf') format('truetype');
+ }  
+@font-face {
+    font-family: 'nbgB';
+    src:url('../fonts/NanumBarunGothicBold.ttf') format('truetype');
+ }
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'nbg', Arial, Helvetica, sans-serif;
+}
+.container {
+    width: 100%;
+    margin-top: 123px;
+    background: $bgwhite;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+li {
+    list-style: none;
+}
+.hidetxt {
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    text-indent: -1000000px;
+    position: absolute;
+}
+.clearfix::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+// main menu
+.gnb-wrap {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    z-index: 9999;
+    border-top: 2px solid black;
+    border-bottom: 1px solid $gray;
+    background: $bgwhite;
+    top: 0;
+    left: 0;
+    .gnb-inner {
+        width: 1100px;
+        margin: 0 auto;
+        position: relative;
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            position: absolute;
+            top: 22px;
+        }
+        .gnb-sub {
+            position: absolute;
+            right: 91px;
+            top: 20px;
+            transition: all .5s ease-in;
+            ul {
+                li {
+                    float: left;
+                    a {
+                        padding: 0 14px;
+                        display: block;
+                        color: #555;
+                        font-size: 13px;
+                        height: 12px;
+                    }
+                    border-right:1px solid $gray;
+                    
+                    &:last-child {
+                        border-right: none;
+                    }
+                    
+                }
+            }
+            
+        }
+        .search {
+                width: 32px;
+                height: 32px;
+                position: absolute;
+                right: 54px;
+                top: 9px;
+                background: white;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                transition: all .5s ease-in;
+                a {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 34px;
+                    height: 34px;
+                    img{
+                        position: absolute;
+                        z-index: 1;
+                        right: 6px;
+                        top: 6px;
+                    }
+                }
+                input {
+                    background-color: none;
+                    border: none;
+                    color: #777;
+                    font-size: 12px;
+                    width: 0;
+                    height: 22px;
+                    padding: 0 10px;
+                    position: absolute;
+                    top: 5px;
+                }
+            }
+    }
+}
+
+// sub menu 
+.gnb-menu {
+    width: 100%;
+    height: 66px;
+    position: absolute;
+    left: 0;
+    top: 54px;
+    z-index: 10;
+    display: block;
+    transition: all .5s;
+    .gnb-menu-inner {
+        width: 1100px;
+        height: 66px;
+        margin: 0 auto;
+        z-index: 7;
+        ul {
+            float: right;
+            .menu01 {
+                @include submenu(89px);
+                ul {
+                    &:last-child {
+                        clear: both;
+                        padding-top: 30px;
+                    }
+                }
+            }
+            .menu02 {
+                @include submenu(73px);
+            }
+            .menu03 {
+                @include submenu(79px);
+            }
+            .menu04 {
+                @include submenu(153px);
+            }
+            .menu05 {
+                @include submenu(225px);
+            }
+            .menu06 {
+                @include submenu(131px);
+            }
+        }
+    }
+}
+
+// floating badge
+.floating-badge {
+    position: fixed;
+    z-index: 999;
+    top: 154px;
+    left: 60%;
+    margin-left: 400px;
+}
+// section01 - FIND YOUR TASTE
+.main-wrap {
+    background: url(../img/2022_Summer1_main_bg.jpg);
+    background-size: cover;
+    background-position-x: -50px;
+    height: 646px;
+    .main-inner {
+        width: 1130px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        box-sizing: border-box;  
+        .main-title {
+            position: absolute;
+            left: 3.9%;
+            top: 46px;
+        }
+        .main-visual {
+            height: 100%;
+            .ssdrink01{
+                position: absolute;
+                top:76px;
+                left: 35.7%;
+                z-index: 8;
+            }
+            .ssdrink02{
+                position: absolute;
+                top: 33.5%;
+                left: 19.6%;
+                z-index: 9;
+            }
+            .ssdrink03{
+                position: absolute;
+                top: 15.7%;
+                right: -8%;
+                z-index: 10;
+            }
+        }
+        .main-more {
+            position: absolute;
+            width: 282px;
+            height: 38px;
+            top: 39%;
+            left: 3.9%;
+            text-align: center;
+            a {
+                @include button(129px, $plum);
+            }
+        }
+    }
+}
+
+// 공지+프로모션
+.line-notice {
+    width: 100%;
+    height: 62px;
+    position: relative;
+    background: $bgwhite;
+    .notice-bg {
+        position: absolute;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: #111;
+    }
+    .notice-inner {
+        overflow: hidden;
+        width: 1280px;
+        background: url(../img/line_notice_bg.jpg);
+        margin: 0 auto;
+        // 공지
+        .notice-left {
+            float: left;
+            width: 57%;
+            z-index: 100;
+            .left-wrap {
+                width: 621px;
+                height: 33px;
+                position: relative;
+                margin-left: 89px;
+                margin-top: 13px;
+                div {
+                    position: absolute;
+                    width: 65px;
+                    height: 17px;
+                    left: 0;
+                    top: 10px;
+                }
+                .notice-list {
+                    position: absolute;
+                    width: 520px;
+                    height: 24px;
+                    overflow: hidden;
+                    left: 65px;
+                    top: 8px;
+                    padding-left: 15px;
+                    font-size: 14px;
+                    ul.notice-item-wrap {
+                        .notice-item {
+                            transition: transform .5s ease-in;                        
+                            transform: translateY(-0px);
+                            a{
+                            line-height: 24px;
+                            color: white;
+                            }
+                        }
+                    }
+                }
+                span {
+                    width: 35px;
+                    height: 35px;
+                    float: right;
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        display: block;
+                        background: url(../img/btn_notice_plus.png);
+                        background-size: 35px;
+                        text-indent: -100000px;
+                    }
+                }
+            }
+        }
+        // 프로모션
+        .notice-right {
+            float: right;
+            width: 43%;
+            z-index: 100;
+            .right-wrap {
+                position: relative;
+                width: 550px;
+                height: 62px;
+                a{
+                    display: block;
+                    position: absolute;
+                    width: 234px;
+                    height: 36px;
+                    left: 37%;
+                    top: 13px;
+                    .prom-news{
+                        background: url(../img/prom_ttl_b.png);
+                        background-size: 100%;
+                        position: absolute;
+                        width: 129px;
+                        height: 17px;
+                        top: 9px;
+                    }
+                    .prom-more{
+                        position: absolute;
+                        width: 35px;
+                        height: 35px;
+                        right: 0;
+                        top: 0;
+                        &Open{
+                            transform: scaleY(-1);
+                        }
+                    }
+                }
+            }
+        };
+    }
+}
+// 프로모션 배너
+.prom-banner {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: all .7s;
+    &Open{height: 658px;}
+    .promSwiper {
+        margin: 0 auto;
+        width: 819px;
+        height: 100%;
+        position: relative;
+        .swiper-wrapper {
+            margin-top: 40px;
+            width: 100%;
+            height: 541px;
+            position: relative;
+            .swiper-slide {
+                height: 553px;
+                opacity: .5;
+                img {
+                    display: block;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+                a {
+                    @include button(121px, #222);
+                    position: absolute;
+                    bottom: 0;
+                    left: 339px;
+                    border-radius: 3px;
+                    &:hover {
+                        background: #222;
+                        color: white;
+                        transition:all .7s;
+                    }
+                }
+            }
+            .swiper-slide-active {
+                opacity: 1;
+            }
+        }
+        .swiper-pagination {
+            bottom: 60px;
+            .swiper-pagination-bullet {
+                background: url(../img/main_prom_off.png);
+                width: 13px;
+                height: 12px;
+            }
+            .swiper-pagination-bullet-active {
+                background: url(../img/main_prom_on.png);
+                width: 13px;
+                height: 12px;
+            }
+        }
+        .swiper-button-next, .swiper-button-prev {
+            width: 51px;
+            height: 51px;
+            border: 2px solid #222;
+            border-radius: 26px;
+            &::after {display: none;}
+        }
+        .swiper-button-next {
+            background: url(../img/arrow_right_on.png) no-repeat center center;
+            transform: translate(120px, -80px);
+        }
+        .swiper-button-prev {
+            background: url(../img/arrow_left_on.png) no-repeat center center;
+            transform: translate(-120px, -80px);
+        }
+    }
+}
+
+// section02 - STARBUCKS REWARD
+.section02 {
+    background: $deepgreen;
+    padding: 30px 0 40px;
+    .reward-wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        .reward-logo {
+            float: left;
+            width: 16.3%;
+            margin:0 40px;
+            text-align: center;
+            img {width: 176px;}
+        }
+        .reward-contents {
+            width: 76%;
+            float: left;
+            padding-right: 30px;
+            color: white;
+            letter-spacing: .5px;
+            box-sizing: border-box;
+            .reward-info {
+                position: relative;
+                margin-bottom: 22px;
+                border-bottom: 1px solid #4b615b;
+                span {font-weight: bold;}
+                .info-txt {
+                    margin-bottom: 12px;
+                    h2 {
+                        line-height: 1.4;
+                        margin-bottom: 12px;
+                        font-size: 26px;
+                    }
+                    p {
+                        line-height: 1.4;
+                        font-size: 17px;
+                    }
+                }
+                .info-signin {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 0;
+                    a {
+                        @include button(77px,white);
+                        display:inline-block;
+                        font-size: 14px;
+                        &:hover {background: none;}
+                        &:first-child{
+                            width: 92px;
+                            background: $green;
+                            color: white;
+                            border: 2px solid $green;
+                        }
+                        &:last-child {
+                            margin-left: 7px;
+                        }
+                    }
+                }
+            }
+            .gift {
+                position: relative;
+                .gift-txt {
+                    span {font-weight: bold;}
+                    p {
+                        line-height: 1.4;
+                        font-size: 14px;
+                    }
+                }
+                .gift-btn {
+                    a {@include button(180px, white);
+                    position: absolute;
+                    top: 0;
+                    right: 0;}
+                    &:hover{background: none;}
+                }
+            }
+        }
+    }
+}
+
+// section03 - COFFEE BEAN
+.section03 {
+    height: 572px;
+    position: relative;
+    background: url(../img/2022_Summer1_bean_bg2.jpg) no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    &::before {
+        background: url(../img/2022_Summer1_bean_bg_left.png) no-repeat;
+        position: absolute;
+        content:'';
+        display: block;
+        width: 425px;
+        height: 392px;
+        left: 0;
+        top: -100px;
+    }
+    &::after {
+        background:url(../img/2022_Summer1_bean_bg_right.png) no-repeat;
+        position: absolute;
+        content: '';
+        display: block;
+        width: 482px;
+        height: 360px;
+        right: 0;
+        bottom: -90px;
+    }
+    .bean-inner {
+        max-width: 1124px;
+        position: relative;
+        margin: 0 auto;
+        height: 100%;
+        .bean-img {
+            position: absolute;
+            left: 14.5%;
+            top: 13.6%;
+            width: 310px;
+        }
+        .bean-txt {
+            position: absolute;
+            top: 32%;
+            right: 17.5%;
+            width: 321px;
+            .bean-more {
+                margin: 39px 0 0;
+                a {
+                    @include button(125px, #1e245c);
+                }
+            }
+        }
+    }
+}
+
+// section04 - RESERVED
+.section04 {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url(../img/reserve_2022_indonesia_visual_bg.jpg);
+    .reserve-title {
+        max-width: 1080px;
+        position: relative;
+        padding-top: 115px;
+        margin: 0 auto;
+        z-index: 10;
+        box-sizing: border-box;
+        img {
+            margin-left: -10px;
+        }
+    }
+    .reserve-info {
+        position: absolute;
+        bottom: -5px;
+        right: 0;
+        &::before {
+            background: url(../img/reserve_2022_indonesia_leaf1.png) no-repeat;
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 373px;
+            height: 277px;
+        }
+        &::after {
+            background: url(../img/reserve_2022_indonesia_leaf2.png) no-repeat;
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -5px;
+            width: 563px;
+            height: 305px;
+        }
+    }
+    .reserve-more {
+        position: relative;
+        z-index: 10;
+        max-width: 1080px;
+        margin: 39px auto 0;
+        padding-left: 500px;
+        a {
+            @include button(125px, #b9813e);
+            display: inline-block;
+        }
+    }
+}
+
+// section05 - PICK YOUR FAVORITE
+.section05 {
+    background: url(../img/fav_prod_bg_new.jpg) center center no-repeat fixed #45434c;
+    background-size: auto 100%;
+    height: 800px;
+    .pick-inner {
+        width: 1280px;
+        position: relative;
+        margin: 0 auto;
+        .pick-title {
+            background: url(../img/fav_prod_txt01.png) no-repeat;
+            width: 258px;
+            height: 204px;
+            position: absolute;
+            top: 120px;
+            left: 200px;
+        }
+        .pick-info {
+            background: url(../img/fav_prod_txt02.png) no-repeat;
+            width: 362px;
+            height: 156px;
+            position: absolute;
+            top: 370px;
+            left: 92px;
+        }
+        .pick-img {
+            background: url(../img/2022_Summer1_pick_img.png) no-repeat;
+            width: 672px;
+            height: 458px;
+            position: absolute;
+            top: 100px;
+            right: -10px;
+
+        }
+        .pick-more {
+            a {
+                @include button(125px, white);
+                position: absolute;
+                top: 570px;
+                left: 328px;
+                &:hover {color: black;}
+            }
+        }
+    }
+}
+
+// section06 - RESERVE MAGAZINE
+.section06 {
+    background: url(../img/reserve_bg_pc.png) no-repeat white 50% 100%;
+    background-size: auto 353px;
+    height: 400px;
+    position: relative;
+    .magazine-wrap {
+        width: 100%;
+        height: 100%;
+        .mgz-title {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 135px;
+            padding-left: 50px;
+            img {
+                transform: translateX(20px);
+            }
+        }
+        .mgz-img {
+            position: absolute;
+            top: 0;
+            right:460px;
+        }
+        .mgz-more {
+            position: absolute;
+            max-width: 1100px;
+            left: 0;
+            right: 0;
+            margin: 33px auto 0;
+            a {
+                @include button(125px, black)
+            }
+        }
+    }
+}
+
+// section07 - STORE
+.section07 {
+    width: 100%;
+    height: 400px;
+    background: url(../img/store_bg.jpg) no-repeat;
+    background-size: 100% auto;
+    overflow: hidden;
+    .store-wrap {
+        width: 1280px;
+        position: relative;
+        top: 0;
+        margin: 0 auto;
+        .store-img{
+            &01 {
+                background: url(../img/store_exp_img01.png);
+                width: 228px;
+                height: 228px;
+                position: absolute;
+                top: 149px;
+                left: 390px;
+            }
+            &02 {
+                background: url(../img/store_exp_img02.png);
+                width: 366px;
+                height: 312px;
+                position: absolute;
+                top: 0;
+                left: 160px;
+                z-index: 5;
+            }
+            &03 {
+                background: url(../img/store_exp_img03.png);
+                width: 343px;
+                height: 142px;
+                position: absolute;
+                top: -60px;
+                left: 520px;
+            }
+            &04 {
+                background: url(../img/store_exp_img04.png);
+                width: 230px;
+                height: 102px;
+                position:absolute;
+                top: 298px;
+                right: 30px;
+            }
+        }
+        .store-txt{
+            &01 {
+                background: url(../img/store_txt01.png);
+                width: 385px;
+                height: 54px;
+                position: absolute;
+                top: 100px;
+                right: 149px;
+            }
+            &02 {
+                background: url(../img/store_txt02.png);
+                width: 366px;
+                height: 61px;
+                position: absolute;
+                top: 168px;
+                right: 168px;
+            }
+        }
+        .store-more{
+            position: absolute;
+            top: 258px;
+            right: 402px;
+            a {
+                @include button(121px, #222);
+                border-radius: 3px;
+            }
+        }
+    }
+}
+
+// FOOTER
+footer#footer {
+    width: 100%;
+    position: relative;
+    background: $bgblack;
+    padding: 32px 0 35px;
+    .footer-inner {
+        width: 1182px;
+        margin: 0 auto;
+        background: url(../img/footer_logo.png) no-repeat right 8px;
+        position: relative;
+        .footer-menu {
+            width: 100%;
+            margin: 0 auto;
+            ul {
+                width: 220px;
+                margin-bottom: 30px;
+                display: inline-block;
+                vertical-align: top;
+                li a{
+                    font-size:12px;
+                    line-height: 24px;
+                    color: white;
+                }
+                .f-menu-title a{
+                    font-size: 14px;
+                    line-height: 40px;
+                }
+            }
+        }
+        .footer-awards {
+            width: 100%;
+            height: 80px;
+            padding-top: 20px;
+            margin-top: 40px;
+            position: relative;
+            background: #282828;
+            .awardsList {
+                width: 1182px;
+                margin: 0 auto;
+                padding-bottom: 20px;
+                li {
+                    float: left;
+                }
+            }
+        }
+        .footer-aside {
+            width: 100%;
+            padding-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            line-height: 18px;
+            .asideList a {
+                color: #ccc;
+                padding: 0 10px;
+                border-right: 1px solid #393939;
+                display: inline-block;
+                &:first-child {
+                    color: #00b050;
+                    font-weight: bold;
+                }
+                &:last-child {
+                    border: none;
+                }
+            }
+            .asideBtn a {
+                @include button(114px, white);
+                font-size: 12px;
+                margin: 10px 3px 0 3px;
+                display: inline-block;
+                line-height: 30px;
+                border-radius: 3px;
+                padding: 0 10px;
+                &:hover {
+                    background: none;
+                }
+            }
+            .copyList {
+                padding: 25px 0 5px;
+                li {
+                    display: inline-block;
+                    margin: 0 7px;
+                }
+            }
+            span {line-height: 40px;}
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,GAAG,AAAC,CACA,OAAO,CAAE,CAAC,CACV,UAAU,CAAE,eAAe,CAC9B,AACD,AAAA,QAAQ,AAAC,CACL,SAAS,CAAE,oBAAoB,CAClC,AACD,AAAA,SAAS,AAAC,CACN,SAAS,CAAE,mBAAmB,CACjC,AACD,AAAA,GAAG,AAAA,KAAK,AAAC,CACL,OAAO,CAAE,CAAC,CACV,SAAS,CAAE,IAAI,CAClB",
+    "sources": [
+        "../scss/scrollEvent.scss"
+    ],
+    "names": [],
+    "file": "scrollEvent.min.css"
+}
