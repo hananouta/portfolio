@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/portfolio/br_clonecoding/static/css/main.fd3cd3e1.css",
+    "main.js": "/portfolio/br_clonecoding/static/js/main.dcdd6385.js",
+    "static/media/img_menu_list.png": "/portfolio/br_clonecoding/static/media/img_menu_list.ad47cd8de4b5cef71ce8.png",
+    "static/media/img_happyorder_delivery.png": "/portfolio/br_clonecoding/static/media/img_happyorder_delivery.8b7e4ccda5584387c3d2.png",
+    "static/media/img_store.jpg": "/portfolio/br_clonecoding/static/media/img_store.fc9759a2f71145e06334.jpg",
+    "static/media/btn_ccm_2.png": "/portfolio/br_clonecoding/static/media/btn_ccm_2.0d6a1c5b20e62a7d9624.png",
+    "static/media/slick.svg": "/portfolio/br_clonecoding/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/portfolio/br_clonecoding/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/portfolio/br_clonecoding/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/portfolio/br_clonecoding/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/portfolio/br_clonecoding/index.html",
+    "main.fd3cd3e1.css.map": "/portfolio/br_clonecoding/static/css/main.fd3cd3e1.css.map",
+    "main.dcdd6385.js.map": "/portfolio/br_clonecoding/static/js/main.dcdd6385.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd3cd3e1.css",
+    "static/js/main.dcdd6385.js"
+  ]
+}

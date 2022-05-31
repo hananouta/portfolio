@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/portfolio/naver_join/static/css/main.2504986a.css",
+    "main.js": "/portfolio/naver_join/static/js/main.b01f4333.js",
+    "static/media/pc_sp_login_190522.png": "/portfolio/naver_join/static/media/pc_sp_login_190522.d29725df95f09698f814.png",
+    "index.html": "/portfolio/naver_join/index.html",
+    "main.2504986a.css.map": "/portfolio/naver_join/static/css/main.2504986a.css.map",
+    "main.b01f4333.js.map": "/portfolio/naver_join/static/js/main.b01f4333.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2504986a.css",
+    "static/js/main.b01f4333.js"
+  ]
+}
