@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/portfolio/covid19/static/js/main.a9471b40.js",
+    "static/media/reactjs.png": "/portfolio/covid19/static/media/reactjs.34711a726cb018ceaa4d.png",
+    "index.html": "/portfolio/covid19/index.html",
+    "main.a9471b40.js.map": "/portfolio/covid19/static/js/main.a9471b40.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.a9471b40.js"
+  ]
+}
